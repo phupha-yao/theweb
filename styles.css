@@ -15,11 +15,22 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     color: var(--color-text);
     background-color: var(--color-bg);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -35,6 +46,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
 }
 
 nav {
@@ -55,6 +67,37 @@ nav {
     font-weight: 700;
     color: var(--color-primary);
     letter-spacing: -0.5px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    gap: 5px;
+    z-index: 101;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav-menu {
@@ -144,6 +187,8 @@ nav {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -278,6 +323,14 @@ section h2 {
     height: 200px;
     background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-accent) 100%);
     border-bottom: 2px solid var(--color-text);
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .project-info {
@@ -394,6 +447,9 @@ section h2 {
     color: var(--color-text);
     border-radius: 0;
     transition: border-color 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
 }
 
 .form-group input:focus,
@@ -976,73 +1032,251 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
     .nav-menu {
-        gap: 15px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-bg);
+        flex-direction: column;
+        gap: 0;
+        padding: 80px 30px 30px;
+        border-left: 2px solid var(--color-text);
+        transition: right 0.3s ease;
+        z-index: 100;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--color-text);
     }
 
     .nav-menu a {
-        font-size: 14px;
+        display: block;
+        padding: 15px 0;
+        font-size: 18px;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 60px 20px;
     }
 
     .hero-content h1 {
-        font-size: 42px;
+        font-size: 36px;
+        letter-spacing: -1px;
     }
 
     .typewriter {
-        font-size: 42px;
+        font-size: 36px;
         border-right-width: 2px;
     }
 
     .hero-subtitle {
         font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    section {
+        padding: 60px 0;
     }
 
     section h2 {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 40px;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-card {
+        margin: 0;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 20px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-buttons .btn-secondary {
+        width: 100%;
+        text-align: center;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skill-item {
+        padding: 20px;
     }
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
     }
 
     .about-image-wrapper {
         margin: 0 auto;
+        max-width: 250px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .contact-content {
+        padding: 0 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 24px;
+        font-size: 15px;
+        width: 100%;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 20px;
+    .nav-menu {
+        width: 100%;
+        right: -100%;
     }
 
-    .nav-menu {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        min-height: 60vh;
+        padding: 40px 15px;
     }
 
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 15px;
     }
 
     .typewriter {
-        font-size: 32px;
+        font-size: 28px;
         border-right-width: 2px;
     }
 
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
     section {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+
+    section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .project-info {
+        padding: 15px;
+    }
+
+    .project-info h3 {
+        font-size: 18px;
+    }
+
+    .project-info p {
+        font-size: 14px;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .tag {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .about-image-wrapper {
+        max-width: 200px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+    .skill-item {
+        padding: 15px;
+    }
+
+    .skill-item h3 {
+        font-size: 18px;
+    }
+
+    .skill-item p {
+        font-size: 14px;
+    }
+
+    .contact-content > p {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+
+    .caterpillar {
+        transform: scale(0.5);
     }
 }
 
