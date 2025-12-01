@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">Portfolio</div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="typewriter">Phuriphat Yaowaratana(Phupha).</h1>
+                <p class="hero-subtitle">Doing something that adjusts the world</p>
+                <a href="#projects" class="btn-primary">View Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About</h2>
+                <div class="about-content">
+                    <div class="about-image-wrapper">
+                        <img src="images/photo.jpg" alt="Phuriphat Yaowaratana" class="about-image">
+                    </div>
+                    <div class="about-text">
+                        <p>I'm a passionate developer who is great at learning new things, building things & getting things done.</p>
+                        <p>I am studying Computer Science at University College London(UCL).</p>
+                        <p>My current interests are in AI, machine learning, and cloud computing. I'm also interested in building things that help people.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/tet.gif" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>Tetris Autoplayer</h3>
+                            <p>Python Tetris engine and AI that uses a heuristic 2‑ply lookahead with GA‑optimized weights (via a genetic algorithm) and a pygame UI to autonomously play and prioritize four‑line (Tetris) clears.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Genetic Algorithm</span>
+                                <span class="tag">BFS</span>
+                            </div>
+                            <a href="https://www.youtube.com/shorts/ytN-X7e9KP0" target="_blank" class="btn-secondary">View Video</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/WANDR1.png" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>WANDR: AI Travel Planner</h3>
+                            <p>AI travel planner that transforms your uploaded screenshots into personalized day itineraries with weather forecasts, interactive maps with traffic data, and smart routing.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Typescript</span>
+                                <span class="tag">Supabase</span>
+                                <span class="tag">RESTful APIs</span>
+                            </div>
+                            <a href="https://wandrrr-phi.vercel.app/" target="_blank" class="btn-secondary">View Website</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/devise.jpg" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>DEVISE: Traceble Agentic AI for Government Council</h3>
+                            <p>AI framework that simulates a municipal "Town Hall" agent and provides a forensic debugging suite to visualize execution traces and automatically identify specific failure points or "culprit" decisions using a secondary Judge LLM.</p>
+                            <div class="project-tags">
+                                <span class="tag">LangChain</span>
+                                <span class="tag">LangGraph</span>
+                                <span class="tag">Langfuse</span>
+                                <span class="tag">LangSmith</span>
+                                <span class="tag">Flask</span>
+                            </div>
+                            <div class="project-buttons">
+                                <a href="images/devise.pdf" target="_blank" class="btn-secondary">View Poster</a>
+                                <a href="https://github.com/dennisushi/goongov" target="_blank" class="btn-secondary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/zero.png" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>Agentic AI Fridge Manager</h3>
+                            <p>Developed an Andriod App which manages fridge inventory. Uses image recognition to update inventory and predict expiry dates. Notifies users if food will expires. Recommends users recipes based on expiry date. Automatically orders missing groceries.</p>
+                            <div class="project-tags">
+                                <span class="tag">Kotlin</span>
+                                <span class="tag">Google Gemini API</span>
+                            </div>
+                            <a href="https://github.com/pig8pig/ZeroWaste1" target="_blank" class="btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/drone.jpg" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>Multiwii Drone</h3>
+                            <p>Arduino-based quadcopter built from scratch.</p>
+                            <div class="project-tags">
+                                <span class="tag">C/C++</span>
+                                <span class="tag">PID Control</span>
+                                <span class="tag">I2C Communication</span>
+                                <span class="tag">Real-Time Systems Architecture</span>
+                            </div>
+                            <a href="#" class="btn-secondary">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/allyed.png" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>AllyED</h3>
+                            <p>Web-app/predictive ML model that predicts mental health risk of high school students based on lifestyle factors.</p>
+                            <div class="project-tags">
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">AWS Sagemaker</span>
+                                <span class="tag">AWS S3</span>
+                            </div>
+                            <a href="https://share.streamlit.io/app/allyed/" target="_blank" class="btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/booking_site.jpeg" alt="Project One" class="project-image">
+                        </div>
+                        <div class="project-info">
+                            <h3>Music Room Booking Site</h3>
+                            <p>Website that allows students to book music rooms at Harrow International School Bangkok.</p>
+                            <div class="project-tags">
+                                <span class="tag">Flask</span>
+                                <span class="tag">SQAlchemy/SQLite</span>
+                                <span class="tag">HTML/CSS/JavaScript</span>
+                            </div>
+                            <a href="https://github.com/DingDong8811/cpa-booking-site" target="_blank" class="btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Languages</h3>
+                        <p>Python, C, C++, SQL, Java, Visual Basic, TypeScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Frameworks</h3>
+                        <p>Flask, HTML/CSS, RESTful APIs</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Developer Tools</h3>
+                        <p>Git, Github, Vim</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Libraries</h3>
+                        <p>Pandas, NumPy, Scikit-learn, Streamlit, SQLAlchemy, Flask-WTF, Flask-Login</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Spoken Languages</h3>
+                        <p>English(Native), Thai(Native)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact-content">
+                    <p>Let's work together on your next project.</p>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cartoon Caterpillars -->
+    <div class="caterpillar caterpillar-1">
+        <div class="caterpillar-head">
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+    </div>
+
+    <div class="caterpillar caterpillar-2">
+        <div class="caterpillar-head">
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+    </div>
+
+    <div class="caterpillar caterpillar-3">
+        <div class="caterpillar-head">
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+        <div class="caterpillar-segment"></div>
+    </div>
+</body>
+</html>
+
